@@ -1,13 +1,13 @@
-defmodule Sema.MixProject do
+defmodule Utf.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :sema,
+      app: :utf,
       version: "0.1.0",
       elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers(),
+      compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
@@ -22,7 +22,6 @@ defmodule Sema.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Sema.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -36,20 +35,8 @@ defmodule Sema.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.5.9"},
-      {:phoenix_pubsub, "~> 2.0"},
-      {:phoenix_ecto, "~> 4.0"},
-      {:ecto_sql, "~> 3.0"},
-      {:postgrex, ">= 0.0.0"},
-      {:phoenix_html, "~> 2.11"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:gettext, "~> 0.11"},
-      {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.1"},
-      {:credo, "~> 1.0", runtime: false, only: :dev},
-      {:distillery, "~> 2.0", runtime: false},
-      {:dialyxir, "~> 1.0-rc", runtime: false, only: :dev},
-      {:wallaby, "~> 0.22.0", runtime: false, only: :test},
+      {:credo, "~> 1.6", runtime: false, only: :dev},
+      {:dialyxir, "~> 1.2", runtime: false, only: :dev},
       {:junit_formatter, "~> 3.1", only: [:test]}
     ]
   end
@@ -61,10 +48,6 @@ defmodule Sema.MixProject do
   #
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
-    [
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
-    ]
+    []
   end
 end
