@@ -9,7 +9,7 @@ config :demo, ecto_repos: [Demo.Repo]
 config :demo, Demo.Repo,
   database: "demo",
   username: "postgres",
-  password: "postgres",
+  password: System.get_env("POSTGRES_PASSWORD"),
   hostname: "localhost"
 
 import_config "#{Mix.env()}.exs"

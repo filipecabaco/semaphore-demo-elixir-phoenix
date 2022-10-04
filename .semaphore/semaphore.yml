@@ -48,7 +48,7 @@ blocks:
             - mix format --check-formatted
         - name: sobelow
           commands:
-            - mix sobelow
+            - mix sobelow --exit high
         - name: audit
           commands:
             - mix hex.audit
