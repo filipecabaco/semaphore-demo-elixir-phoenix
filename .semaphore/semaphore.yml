@@ -24,7 +24,7 @@ blocks:
             - cache restore dialyzer-plt
             - mix deps.get
             - mix do compile, dialyzer --plt
-            - mix escript.install hex sobelow
+            - mix escript.install --force hex sobelow
             - MIX_ENV=test mix compile
             - cache store
             - cache store dialyzer-plt priv/plts/
