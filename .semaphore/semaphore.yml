@@ -25,6 +25,7 @@ blocks:
             - mix deps.get
             - mix do compile, dialyzer --plt
             - mix escript.install --force hex sobelow
+            - mix escript.install --force hex mix_audit
             - MIX_ENV=test mix compile
             - cache store
             - cache store dialyzer-plt priv/plts/
@@ -49,9 +50,12 @@ blocks:
         - name: sobelow
           commands:
             - mix sobelow --exit high
-        - name: audit
+        - name: retired-packages
           commands:
             - mix hex.audit
+        - name: audit
+          commands:
+            - mix deps.audit
 
 after_pipeline:
   task:

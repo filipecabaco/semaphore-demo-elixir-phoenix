@@ -36,6 +36,7 @@ defmodule Demo.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:sweet_xml, "~> 0.6.0"},
       {:ecto, "~> 3.8"},
       {:ecto_sql, "~> 3.8"},
       {:postgrex, "~> 0.16.5"},
@@ -43,6 +44,7 @@ defmodule Demo.MixProject do
       {:sobelow, "~> 0.8", only: :dev},
       {:credo, "~> 1.6", runtime: false, only: :dev},
       {:dialyxir, "~> 1.2", runtime: false, only: :dev},
+      {:mix_audit, "~> 2.0", only: [:dev, :test], runtime: false},
       {:junit_formatter, "~> 3.1", only: [:test]}
     ]
   end
