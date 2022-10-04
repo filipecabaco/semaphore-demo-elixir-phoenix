@@ -1,6 +1,7 @@
 import Config
 
-# Print only warnings and errors during test
+config :demo, Demo.Repo, pool: Ecto.Adapters.SQL.Sandbox
+
 config :logger, level: :warn
 
 config :junit_formatter,

@@ -1,9 +1,9 @@
-defmodule Utf.MixProject do
+defmodule Demo.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :utf,
+      app: :demo,
       version: "0.1.0",
       elixir: "~> 1.11",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -22,6 +22,7 @@ defmodule Utf.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
+      mod: {Demo.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -35,6 +36,11 @@ defmodule Utf.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:ecto, "~> 3.8"},
+      {:ecto_sql, "~> 3.8"},
+      {:postgrex, "~> 0.16.5"},
+      {:paginator, "~> 0.6.0"},
+      {:sobelow, "~> 0.8", only: :dev},
       {:credo, "~> 1.6", runtime: false, only: :dev},
       {:dialyxir, "~> 1.2", runtime: false, only: :dev},
       {:junit_formatter, "~> 3.1", only: [:test]}
