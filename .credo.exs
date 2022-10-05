@@ -146,7 +146,8 @@
         {Credo.Check.Refactor.ModuleDependencies, false},
         {Credo.Check.Refactor.VariableRebinding, false},
         {Credo.Check.Warning.MapGetUnsafePass, false},
-        {Credo.Check.Warning.UnsafeToAtom, false}
+        {Credo.Check.Warning.UnsafeToAtom, []},
+        {Credo.Check.Warning.LeakyEnvironment, []}
 
         #
         # Custom checks can be created using `mix credo.gen.check`.
