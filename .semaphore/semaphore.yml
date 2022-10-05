@@ -49,7 +49,7 @@ blocks:
             - mix format --check-formatted
         - name: sobelow
           commands:
-            - mix sobelow --exit high
+            - mix sobelow --exit medium
         - name: retired-packages
           commands:
             - mix hex.audit
