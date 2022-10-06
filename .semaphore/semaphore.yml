@@ -39,11 +39,9 @@ blocks:
         - name: credo
           commands:
             - mix credo -a
-
         - name: dialyzer
           commands:
             - mix dialyzer --no-compile
-
         - name: formatter
           commands:
             - mix format --check-formatted
